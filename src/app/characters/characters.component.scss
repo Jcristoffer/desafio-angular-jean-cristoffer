@@ -1,0 +1,17 @@
+.characters-card {
+  width: 200px;
+  cursor: pointer;
+
+  img {
+    height: 200px;
+  }
+}
+
+.characters-pagination {
+  padding: 40px 0;
+  text-align: center;
+
+  button {
+    margin-right: 16px;
+  }
+}

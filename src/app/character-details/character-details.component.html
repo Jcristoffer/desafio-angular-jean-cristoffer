@@ -1,0 +1,16 @@
+<section class="centralized-content" *ngIf="!showError && character">
+  <mat-card class="character-details">
+    <mat-card-header>
+      <mat-card-title>{{ character.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="character.thumbnail.path + '.' + character.thumbnail.extension" [alt]="character.name">
+    <mat-card-content>
+      <p>{{ character.description ? character.description : 'Without description' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [routerLink]="['/characters/' + character.id + '/hq']">HQ</a>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<mat-card class="show-error" *ngIf="showError">Desculpe, ocorreu um erro</mat-card>

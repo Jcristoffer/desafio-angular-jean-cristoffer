@@ -1,0 +1,19 @@
+<section *ngIf="!showError && characters">
+  <mat-grid-list cols="5">
+    <mat-grid-tile *ngFor="let item of characters">
+      <mat-card class="characters-card" [routerLink]="['/characters/' + item.id]">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="item.thumbnail.path + '.' + item.thumbnail.extension" [alt]="item.name">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  <div class="characters-pagination">
+    <button mat-button (click)="previousPage()">Anterior</button>
+    <button mat-button (click)="nextPage()">Próxima</button>
+  </div>
+</section>
+
+<mat-card class="show-error" *ngIf="showError">Desculpe, ocorreu um erro</mat-card>
